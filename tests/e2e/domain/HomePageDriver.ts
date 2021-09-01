@@ -1,4 +1,4 @@
-export interface HomeDriver {
+export interface HomePageDriver {
   getCompanyNameFromHeader(): Promise<string>;
   getCompanyIdFromFooter(): Promise<string>;
   getCompanyEmailFromFooter(): Promise<string>;
