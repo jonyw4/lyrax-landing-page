@@ -1,8 +1,18 @@
 import { HomePageDriver } from "../domain";
+import { PlaywrightDriver } from "./PlaywrightDriver";
 
-export class HomePagePlaywrightDriver implements HomePageDriver {
+const LANDING_PAGE_URL =
+  process.env.LANDING_PAGE_URL || "http://localhost:3000";
+
+export class HomePagePlaywrightDriver
+  extends PlaywrightDriver
+  implements HomePageDriver
+{
+  public async goToHomePage() {
+    await this.getPage().goto(LANDING_PAGE_URL);
+  }
   async getCompanyNameFromHeader(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().textContent("header");
   }
   async getCompanyIdFromFooter(): Promise<string> {
     throw new Error("Method not implemented.");
@@ -28,5 +38,4 @@ export class HomePagePlaywrightDriver implements HomePageDriver {
   async changeLocaleTo(locale: string): Promise<void> {
     throw new Error("Method not implemented.");
   }
-  
 }

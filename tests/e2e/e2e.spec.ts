@@ -1,17 +1,29 @@
-import { CompanyInfo, CompanyPartner } from '../../src/domain/entities';
 import { CompanyInMemoryRepo } from '../../src/infra/CompanyInMemoryRepo';
 import { HomePageDriver } from './domain'
 import { HomePagePlaywrightDriver } from './infra/HomePagePlaywrightDriver';
+import { PlaywrightTestBrowser } from './infra/PlaywrightTestBrowser';
+
+const companyRepo = new CompanyInMemoryRepo();
+
+const companyInfo = companyRepo.getInfo();
+const partners = companyRepo.getPartners();
+const anaLiviaPartner = partners.find((partner) => partner.name === "Ana");
+const jonathanPartner = partners.find((partner) => partner.name === "Jonathan");
+
+let homePageDriver: HomePageDriver;
 
 describe('E2E', () => {
-  const homePageDriver = new HomePagePlaywrightDriver();
+  let playwrightTestBrowser: PlaywrightTestBrowser;
 
-  const companyRepo = new CompanyInMemoryRepo();
+  beforeAll(async () => {
+    playwrightTestBrowser = await PlaywrightTestBrowser.getInstance();
+    homePageDriver = new HomePagePlaywrightDriver(playwrightTestBrowser);
+    await homePageDriver.goToHomePage();
+  });
 
-  const companyInfo = companyRepo.getInfo();
-  const partners = companyRepo.getPartners();
-  const anaLiviaPartner = partners.find((partner) => partner.name === 'Ana');
-  const jonathanPartner = partners.find((partner) => partner.name === 'Jonathan');
+  afterAll(async () => {
+    await playwrightTestBrowser.finish();
+  });
 
   it("should be able to see the company name in the header", async () => {
     const companyName = await homePageDriver.getCompanyNameFromHeader();

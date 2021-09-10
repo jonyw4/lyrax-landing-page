@@ -7,5 +7,6 @@ export interface HomePageDriver {
   getAnaLiviaLinkedinLinkFromPartnersSection(): Promise<string>;
   getJonathanLinkedinLinkFromPartnersSection(): Promise<string>;
   getLocale(): Promise<void>;
+  goToHomePage(): Promise<void>;
   changeLocaleTo(locale: string): Promise<void>;
 }
