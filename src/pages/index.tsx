@@ -6,10 +6,9 @@ export function HomePage() {
   const companyRepo = new CompanyInMemoryRepo();
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
-      <main>
-        <Header />
-        <Footer />
-      </main>
+      <Header />
+      <main />
+      <Footer />
     </CompanyRepositoryContext.Provider>
   );
 }
