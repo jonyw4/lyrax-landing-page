@@ -15,7 +15,7 @@ export class HomePagePlaywrightDriver
     return await this.getPage().textContent("header");
   }
   async getCompanyIdFromFooter(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().textContent("footer");
   }
   async getCompanyEmailFromFooter(): Promise<string> {
     throw new Error("Method not implemented.");
