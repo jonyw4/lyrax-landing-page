@@ -6,12 +6,17 @@ import {
   CompanyRepositoryContext,
   Partners,
 } from "../components";
+import { useRouter } from 'next/router';
 
 export function HomePage() {
   const companyRepo = new CompanyInMemoryRepo();
+  const router = useRouter();
+  const changeLanguage = (language) =>
+    router.push("/", `/${language}`, { locale: language });
+    
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
-      <Header />
+      <Header changeLanguage={changeLanguage} />
       <main>
         <Partners />
       </main>

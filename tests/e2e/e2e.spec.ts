@@ -85,7 +85,7 @@ describe('E2E', () => {
   describe("A11y", () => {
     it("should be able to change the locale from page", async () => {
       await homePageDriver.changeLocaleTo("en");
-      const locale = homePageDriver.getLocale();
+      const locale = await homePageDriver.getLocale();
       expect(locale).toBe("en");
     });
   });

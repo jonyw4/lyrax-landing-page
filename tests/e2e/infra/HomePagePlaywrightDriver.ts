@@ -12,7 +12,7 @@ export class HomePagePlaywrightDriver
     await this.getPage().goto(LANDING_PAGE_URL);
   }
   async getCompanyNameFromHeader(): Promise<string> {
-    return await this.getPage().textContent("header");
+    return await this.getPage().textContent("[data-test=company-info]");
   }
   async getCompanyIdFromFooter(): Promise<string> {
     return await this.getPage().textContent(
@@ -48,10 +48,13 @@ export class HomePagePlaywrightDriver
       "href"
     );
   }
-  async getLocale(): Promise<void> {
-    throw new Error("Method not implemented.");
+  async getLocale(): Promise<string> {
+    return await this.getPage().getAttribute(
+      "html",
+      "lang"
+    );
   }
   async changeLocaleTo(locale: string): Promise<void> {
-    throw new Error("Method not implemented.");
+    await this.getPage().click(`[data-test=button-change-i18-${locale}]`);
   }
 }

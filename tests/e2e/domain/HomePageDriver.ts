@@ -6,7 +6,7 @@ export interface HomePageDriver {
   getInstagramLinkFromSocialMediaSection(): Promise<string>;
   getAnaLiviaLinkedinLinkFromPartnersSection(): Promise<string>;
   getJonathanLinkedinLinkFromPartnersSection(): Promise<string>;
-  getLocale(): Promise<void>;
+  getLocale(): Promise<string>;
   goToHomePage(): Promise<void>;
   changeLocaleTo(locale: string): Promise<void>;
 }
