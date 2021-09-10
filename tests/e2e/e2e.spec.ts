@@ -35,8 +35,8 @@ describe('E2E', () => {
     expect(id).toBe(companyInfo.id);
   });
 
-  it("should be able to see the email in the footer", () => {
-    const email = homePageDriver.getCompanyEmailFromFooter();
+  it("should be able to see the email in the footer", async () => {
+    const email = await homePageDriver.getCompanyEmailFromFooter();
     expect(email).toBe(companyInfo.email);
   });
 

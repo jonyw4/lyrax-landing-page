@@ -15,10 +15,14 @@ export class HomePagePlaywrightDriver
     return await this.getPage().textContent("header");
   }
   async getCompanyIdFromFooter(): Promise<string> {
-    return await this.getPage().textContent("footer");
+    return await this.getPage().textContent(
+      "[data-test=footer-company-info-id]"
+    );
   }
   async getCompanyEmailFromFooter(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().textContent(
+      "[data-test=footer-company-info-email]"
+    );
   }
   async getFacebookLinkFromSocialMediaSection(): Promise<string> {
     throw new Error("Method not implemented.");
