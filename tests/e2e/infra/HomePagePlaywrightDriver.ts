@@ -37,10 +37,16 @@ export class HomePagePlaywrightDriver
     );
   }
   async getAnaLiviaLinkedinLinkFromPartnersSection(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().getAttribute(
+      "[data-test=partner-ana-social-media-linkedin]",
+      "href"
+    );
   }
   async getJonathanLinkedinLinkFromPartnersSection(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().getAttribute(
+      "[data-test=partner-jony-social-media-linkedin]",
+      "href"
+    );
   }
   async getLocale(): Promise<void> {
     throw new Error("Method not implemented.");

@@ -1,13 +1,20 @@
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 import { CompanyInMemoryRepo } from "../infra/CompanyInMemoryRepo";
-import { Header, Footer, CompanyRepositoryContext } from "../components";
+import {
+  Header,
+  Footer,
+  CompanyRepositoryContext,
+  Partners,
+} from "../components";
 
 export function HomePage() {
   const companyRepo = new CompanyInMemoryRepo();
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
       <Header />
-      <main />
+      <main>
+        <Partners />
+      </main>
       <Footer />
     </CompanyRepositoryContext.Provider>
   );

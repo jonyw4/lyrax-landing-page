@@ -7,8 +7,8 @@ const companyRepo = new CompanyInMemoryRepo();
 
 const companyInfo = companyRepo.getInfo();
 const partners = companyRepo.getPartners();
-const anaLiviaPartner = partners.find((partner) => partner.name === "Ana");
-const jonathanPartner = partners.find((partner) => partner.name === "Jonathan");
+const anaLiviaPartner = partners.find((partner) => partner.id === "ana");
+const jonathanPartner = partners.find((partner) => partner.id === "jony");
 
 let homePageDriver: HomePageDriver;
 

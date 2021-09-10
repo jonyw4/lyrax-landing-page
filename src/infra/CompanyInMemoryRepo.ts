@@ -16,7 +16,8 @@ export class CompanyInMemoryRepo implements CompanyRepository {
   getPartners(): CompanyPartner[] {
     return [
       {
-        name: "Jonathan Célio",
+        id: "jony",
+        name: "Jonathan Celio",
         email: "jonathan.clio@hotmail.com",
         socialMediaPages: [
           { name: "Facebook", url: "https://www.facebook.com" },
@@ -25,7 +26,8 @@ export class CompanyInMemoryRepo implements CompanyRepository {
         ],
       },
       {
-        name: "Ana Livia Nunes",
+        id: "ana",
+        name: "Ana Livia",
         email: "ana_livia_nunes@hotmail.com",
         socialMediaPages: [
           { name: "Facebook", url: "https://www.facebook.com" },
