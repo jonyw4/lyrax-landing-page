@@ -1,11 +1,10 @@
-import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
+import { Header } from "../components";
 
 export function HomePage(){
-  const { t } = useTranslation("common");
   return (
     <div>
-      <h1>{t("main.description")}</h1>
+      <Header />
     </div>
   );
 }
