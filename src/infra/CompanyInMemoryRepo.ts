@@ -7,9 +7,9 @@ export class CompanyInMemoryRepo implements CompanyRepository {
       id: "123",
       email: "jonathan.test@",
       socialMediaPages: [
-        { type: "facebook", url: "https://www.facebook.com" },
-        { type: "instagram", url: "https://www.twitter.com" },
-        { type: "linkedin", url: "https://www.linkedin.com" },
+        { name: "Facebook", url: "https://www.facebook.com" },
+        { name: "Instagram", url: "https://www.twitter.com" },
+        { name: "Linkedin", url: "https://www.linkedin.com" },
       ],
     };
   }
@@ -19,18 +19,18 @@ export class CompanyInMemoryRepo implements CompanyRepository {
         name: "Jonathan Célio",
         email: "jonathan.clio@hotmail.com",
         socialMediaPages: [
-          { type: "facebook", url: "https://www.facebook.com" },
-          { type: "instagram", url: "https://www.twitter.com" },
-          { type: "linkedin", url: "https://www.linkedin.com" },
+          { name: "Facebook", url: "https://www.facebook.com" },
+          { name: "Instagram", url: "https://www.twitter.com" },
+          { name: "Linkedin", url: "https://www.linkedin.com" },
         ],
       },
       {
         name: "Ana Livia Nunes",
         email: "ana_livia_nunes@hotmail.com",
         socialMediaPages: [
-          { type: "facebook", url: "https://www.facebook.com" },
-          { type: "instagram", url: "https://www.twitter.com" },
-          { type: "linkedin", url: "https://www.linkedin.com" },
+          { name: "Facebook", url: "https://www.facebook.com" },
+          { name: "Instagram", url: "https://www.twitter.com" },
+          { name: "Linkedin", url: "https://www.linkedin.com" },
         ],
       },
     ];

@@ -1,4 +1,4 @@
 export interface SocialMediaPage {
-  type: "facebook" | "instagram" | "linkedin";
+  name: "Facebook" | "Instagram" | "Linkedin";
   url: string;
 }

@@ -25,10 +25,16 @@ export class HomePagePlaywrightDriver
     );
   }
   async getFacebookLinkFromSocialMediaSection(): Promise<string> {
-    throw new Error("Method not implemented.");
+     return await this.getPage().getAttribute(
+       "[data-test=footer-company-social-media-facebook]",
+       "href"
+     );
   }
   async getInstagramLinkFromSocialMediaSection(): Promise<string> {
-    throw new Error("Method not implemented.");
+    return await this.getPage().getAttribute(
+      "[data-test=footer-company-social-media-instagram]",
+      "href"
+    );
   }
   async getAnaLiviaLinkedinLinkFromPartnersSection(): Promise<string> {
     throw new Error("Method not implemented.");

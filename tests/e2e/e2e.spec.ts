@@ -43,8 +43,8 @@ describe('E2E', () => {
   describe("Social Media", () => {
     it("should be able to see the Facebook link in the footer", async () => {
       const companyFacebookLink = companyInfo.socialMediaPages.find(
-        (type) => type.type === "facebook"
-      );
+        ({ name }) => name === "Facebook"
+      ).url;
        
       const link = await homePageDriver.getFacebookLinkFromSocialMediaSection();
       expect(link).toBe(companyFacebookLink);
@@ -52,8 +52,8 @@ describe('E2E', () => {
 
     it("should be able to see the Instagram link in the footer", async () => {
       const companyInstagramLink = companyInfo.socialMediaPages.find(
-        (type) => type.type === "instagram"
-      );
+        ({ name }) => name === "Instagram"
+      ).url;
        
       const link = await homePageDriver.getInstagramLinkFromSocialMediaSection();
       expect(link).toBe(companyInstagramLink);
@@ -63,8 +63,8 @@ describe('E2E', () => {
   describe("Partners", () => {
     it("should be able to see Ana Livia Linkedin", async () => {
       const anaLiviaLinkedin = anaLiviaPartner.socialMediaPages.find(
-        (type) => type.type === "linkedin"
-      );
+        ({ name }) => name === "Linkedin"
+      ).url;
 
       const link =
         await homePageDriver.getAnaLiviaLinkedinLinkFromPartnersSection();
@@ -73,8 +73,8 @@ describe('E2E', () => {
 
     it("should be able to see Jonathan Celio Linkedin", async () => {
       const jonathanLinkedin = jonathanPartner.socialMediaPages.find(
-        (type) => type.type === "linkedin"
-      );
+        ({ name }) => name === "Linkedin"
+      ).url;
 
       const link =
         await homePageDriver.getJonathanLinkedinLinkFromPartnersSection();
