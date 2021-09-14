@@ -13,8 +13,8 @@ import { useTranslation } from 'react-i18next';
 
 export function HomePage() {
   const { t } = useTranslation()
-  const companyRepo = new CompanyInMemoryRepo();
   const router = useRouter();
+
   const changeLanguage = (language) =>
     router.push("/", `/${language}`, { locale: language });
 
@@ -23,25 +23,26 @@ export function HomePage() {
     description: t(`features.${name}.description`),
   });
 
+  const companyRepo = new CompanyInMemoryRepo();
+
   const featureList = [
     createFeatureListItem("tech"),
     createFeatureListItem("teamWork"),
     createFeatureListItem("bestPractices"),
     createFeatureListItem("zeroToHeroDesign"),
   ];
+
+  const serviceList = [
+    t("whatWeDo.services.softwareAsService"),
+    t("whatWeDo.services.softwareDevelopment"),
+    t("whatWeDo.services.design"),
+  ];
     
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
       <Header changeLanguage={changeLanguage} />
       <main>
-        <WhatWeDo
-          text={t(`whatWeDo.title`)}
-          services={[
-            t("whatWeDo.services.softwareAsService"),
-            t("whatWeDo.services.softwareDevelopment"),
-            t("whatWeDo.services.design"),
-          ]}
-        />
+        <WhatWeDo text={t(`whatWeDo.title`)} services={serviceList} />
         <FeatureList list={featureList} />
         <PartnerList />
       </main>
