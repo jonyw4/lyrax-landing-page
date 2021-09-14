@@ -4,21 +4,37 @@ import {
   Header,
   Footer,
   CompanyRepositoryContext,
-  Partners,
+  PartnerList,
+  FeatureList,
 } from "../components";
 import { useRouter } from 'next/router';
+import { useTranslation } from 'react-i18next';
 
 export function HomePage() {
+  const { t } = useTranslation()
   const companyRepo = new CompanyInMemoryRepo();
   const router = useRouter();
   const changeLanguage = (language) =>
     router.push("/", `/${language}`, { locale: language });
+
+  const createFeatureListItem = (name: string) => ({
+    title: t(`features.${name}.title`),
+    description: t(`features.${name}.description`),
+  });
+
+  const featureList = [
+    createFeatureListItem("tech"),
+    createFeatureListItem("teamWork"),
+    createFeatureListItem("bestPractices"),
+    createFeatureListItem("zeroToHeroDesign"),
+  ];
     
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
       <Header changeLanguage={changeLanguage} />
       <main>
-        <Partners />
+        <FeatureList list={featureList} />
+        <PartnerList />
       </main>
       <Footer />
     </CompanyRepositoryContext.Provider>

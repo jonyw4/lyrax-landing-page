@@ -1,5 +1,23 @@
 {
   "main": {
     "description": "Nós criamos sites e aplicações web sob de alto impacto, seja como serviço ou colaborativamente, que resolvem os seus problemas e de seus clientes."
+  },
+  "features":{
+    "tech": {
+      "title": "Tecnologia",
+      "description": "Nós dominamos as mais recentes tecnologias para desenvolver aplicações rápidas, modernas, bonitas e seguras."
+    },
+    "teamWork": {
+      "title": "Trabalho em Equipe",
+      "description": "Não existe software sem trabalho em equipe. Nós nos esforçamos para desenvolver as melhores aplicações de acordo com o seu contexto"
+    },
+    "bestPractices": {
+      "title": "Melhores Práticas",
+      "description": "Nossos profissionais são experts no assunto com anos de experiencia focados sempre em usarem as melhores práticas de desenvolvimento ágil e de software como: Scrum, Clean Code, XP, TDD"
+    },
+    "zeroToHeroDesign": {
+      "title": "Design de ponta a ponta",
+      "description": "Criamos desde a validação do produto até a entrega, cuidando dos principais desafios no desenvolvimento de produtos digitais como: Reserch, Jornada de Usuário, Mapa de funcionalidades, design system, prototipos de baixa e alta fidelidade, teste de usabilidade e etc."
+    }
   }
 }
