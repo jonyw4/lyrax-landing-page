@@ -40,9 +40,11 @@ export function HomePage() {
     
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
-      <Header changeLanguage={changeLanguage} />
-      <main>
+      <div className="bg-gradient-to-r from-purple-800 to-indigo-700 text-white">
+        <Header changeLanguage={changeLanguage} />
         <WhatWeDo text={t(`whatWeDo.title`)} services={serviceList} />
+      </div>
+      <main>
         <FeatureList list={featureList} />
         <PartnerList />
       </main>
