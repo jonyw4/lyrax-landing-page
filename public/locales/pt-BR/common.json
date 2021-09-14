@@ -1,8 +1,13 @@
 {
-  "main": {
-    "description": "Nós criamos sites e aplicações web sob de alto impacto, seja como serviço ou colaborativamente, que resolvem os seus problemas e de seus clientes."
+  "whatWeDo": {
+    "title": "Nós criamos sites e aplicações web sob de alto impacto, seja como serviço ou colaborativamente, que resolvem os seus problemas e de seus clientes.",
+    "services": {
+      "softwareAsService": "Software como Serviço (SaaS)",
+      "softwareDevelopment": "Desenvolvimento de Software (in house)",
+      "design": "Desenvolvimento de produtos digitais"
+    }
   },
-  "features":{
+  "features": {
     "tech": {
       "title": "Tecnologia",
       "description": "Nós dominamos as mais recentes tecnologias para desenvolver aplicações rápidas, modernas, bonitas e seguras."

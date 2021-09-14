@@ -6,6 +6,7 @@ import {
   CompanyRepositoryContext,
   PartnerList,
   FeatureList,
+  WhatWeDo,
 } from "../components";
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
@@ -33,6 +34,14 @@ export function HomePage() {
     <CompanyRepositoryContext.Provider value={companyRepo}>
       <Header changeLanguage={changeLanguage} />
       <main>
+        <WhatWeDo
+          text={t(`whatWeDo.title`)}
+          services={[
+            t("whatWeDo.services.softwareAsService"),
+            t("whatWeDo.services.softwareDevelopment"),
+            t("whatWeDo.services.design"),
+          ]}
+        />
         <FeatureList list={featureList} />
         <PartnerList />
       </main>
