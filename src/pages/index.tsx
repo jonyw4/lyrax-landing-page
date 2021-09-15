@@ -48,7 +48,14 @@ export function HomePage() {
         <FeatureList list={featureList} />
         <PartnerList />
       </main>
-      <Footer />
+      <Footer
+        text={{
+          copyright: t("copyright", {
+            year: new Date().getFullYear(),
+          }),
+          companyId: t("companyId"),
+        }}
+      />
     </CompanyRepositoryContext.Provider>
   );
 }
