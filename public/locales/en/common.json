@@ -26,5 +26,6 @@
     }
   },
   "copyright": "© Copyright {{year}} Lyrax",
-  "companyId": "Company ID (CNPJ)"
+  "companyId": "Company ID (CNPJ)",
+  "title": "Lyrax | Software Development and Management by Subscription and Service (SaaS)"
 }

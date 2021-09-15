@@ -10,6 +10,7 @@ import {
 } from "../components";
 import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
+import Head from 'next/head'
 
 export function HomePage() {
   const { t } = useTranslation()
@@ -40,6 +41,10 @@ export function HomePage() {
     
   return (
     <CompanyRepositoryContext.Provider value={companyRepo}>
+      <Head>
+        <title>{t('title')}</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div className="bg-gradient-to-r from-purple-800 to-indigo-700 text-white">
         <Header changeLanguage={changeLanguage} />
         <WhatWeDo text={t(`whatWeDo.title`)} services={serviceList} />
