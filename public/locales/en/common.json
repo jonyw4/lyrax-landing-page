@@ -24,5 +24,7 @@
       "title": "Zero to Hero Design ",
       "description": "We create from product validation to delivery, taking care of the main challenges in the development of digital products such as: Reserch, User Journey, Feature Map, design system, low and high fidelity prototypes, usability testing and so on."
     }
-  }
+  },
+  "copyright": "© Copyright {{year}} Lyrax",
+  "companyId": "Company ID (CNPJ)"
 }

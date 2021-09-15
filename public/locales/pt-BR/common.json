@@ -24,5 +24,7 @@
       "title": "Design de ponta a ponta",
       "description": "Criamos desde a validação do produto até a entrega, cuidando dos principais desafios no desenvolvimento de produtos digitais como: Reserch, Jornada de Usuário, Mapa de funcionalidades, design system, prototipos de baixa e alta fidelidade, teste de usabilidade e etc."
     }
-  }
+  },
+  "copyright": "© Todos direitos reservados {{year}} Lyrax",
+  "companyId": "CNPJ"
 }
