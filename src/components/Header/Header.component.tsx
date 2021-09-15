@@ -12,12 +12,14 @@ export function Header({ changeLanguage }: HeaderProps) {
           <button
             onClick={() => changeLanguage("pt-BR")}
             data-test="button-change-i18-pt-BR"
+            className="px-2"
           >
             PT
           </button>
           <button
             onClick={() => changeLanguage("en")}
             data-test="button-change-i18-en"
+            className="px-2"
           >
             EN
           </button>
