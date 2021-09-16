@@ -45,6 +45,16 @@ export function HomePage() {
       <Head>
         <title>{t('title')}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon/favicon-16x16.png" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+        <link rel="mask-icon" href="/favicon/safari-pinned-tab.svg" color="#5b21b6" />
+        <meta name="apple-mobile-web-app-title" content="Lyrax" />
+        <meta name="application-name" content="Lyrax" />
+        <meta name="msapplication-TileColor" content="#5b21b6" />
+        <meta name="theme-color" content="#ffffff" />
       </Head>
       
       <LocaleContext.Provider value={{ setLocale: setLanguage, locale: language }}>
