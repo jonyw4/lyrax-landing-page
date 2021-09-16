@@ -4,6 +4,7 @@ import {
   Header,
   Footer,
   CompanyRepositoryContext,
+  LocaleContext,
   PartnerList,
   FeatureList,
   WhatWeDo,
@@ -12,12 +13,12 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import Head from 'next/head'
 
-export function HomePage() {
+export function HomePage({ language }) {
   const { t } = useTranslation()
   const router = useRouter();
 
-  const changeLanguage = (language) =>
-    router.push("/", `/${language}`, { locale: language });
+  const setLanguage = (locale) =>
+    router.push("/", `/${locale}`, { locale });
 
   const createFeatureListItem = (name: string) => ({
     title: t(`features.${name}.title`),
@@ -40,28 +41,33 @@ export function HomePage() {
   ];
     
   return (
-    <CompanyRepositoryContext.Provider value={companyRepo}>
+    <>
       <Head>
         <title>{t('title')}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div className="bg-gradient-to-r from-purple-800 to-indigo-700 text-white">
-        <Header changeLanguage={changeLanguage} />
-        <WhatWeDo text={t(`whatWeDo.title`)} services={serviceList} />
-      </div>
-      <main>
-        <FeatureList list={featureList} />
-        <PartnerList />
-      </main>
-      <Footer
-        text={{
-          copyright: t("copyright", {
-            year: new Date().getFullYear(),
-          }),
-          companyId: t("companyId"),
-        }}
-      />
-    </CompanyRepositoryContext.Provider>
+      
+      <LocaleContext.Provider value={{ setLocale: setLanguage, locale: language }}>
+        <CompanyRepositoryContext.Provider value={companyRepo}>
+          <div className="bg-gradient-to-r from-purple-800 to-indigo-700 text-white">
+            <Header />
+            <WhatWeDo text={t(`whatWeDo.title`)} services={serviceList} />
+          </div>
+          <main>
+            <FeatureList list={featureList} />
+            <PartnerList />
+          </main>
+          <Footer
+            text={{
+              copyright: t("copyright", {
+                year: new Date().getFullYear(),
+              }),
+              companyId: t("companyId"),
+            }}
+          />
+        </CompanyRepositoryContext.Provider>
+      </LocaleContext.Provider>
+    </>
   );
 }
 
