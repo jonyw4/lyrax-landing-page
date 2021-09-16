@@ -37,7 +37,7 @@ describe('E2E', () => {
 
   it("should be able to see the email in the footer", async () => {
     const email = await homePageDriver.getCompanyEmailFromFooter();
-    expect(email).toBe(companyInfo.email);
+    expect(email).toBe(`mailto:${companyInfo.email}`);
   });
 
   describe("Social Media", () => {
@@ -84,9 +84,9 @@ describe('E2E', () => {
 
   describe("A11y", () => {
     it("should be able to change the locale from page", async () => {
-      await homePageDriver.changeLocaleTo("en");
+      await homePageDriver.changeLocaleTo("pt-BR");
       const locale = await homePageDriver.getLocale();
-      expect(locale).toBe("en");
+      expect(locale).toBe("pt-BR");
     });
   });
 });

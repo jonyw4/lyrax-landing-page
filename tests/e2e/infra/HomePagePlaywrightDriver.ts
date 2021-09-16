@@ -12,7 +12,8 @@ export class HomePagePlaywrightDriver
     await this.getPage().goto(LANDING_PAGE_URL);
   }
   async getCompanyNameFromHeader(): Promise<string> {
-    return await this.getPage().textContent("[data-test=company-info]");
+    return await this.getPage()
+      .getAttribute("[data-test=company-info]", "title");
   }
   async getCompanyIdFromFooter(): Promise<string> {
     return await this.getPage().textContent(
@@ -20,8 +21,9 @@ export class HomePagePlaywrightDriver
     );
   }
   async getCompanyEmailFromFooter(): Promise<string> {
-    return await this.getPage().textContent(
-      "[data-test=footer-company-info-email]"
+    return await this.getPage().getAttribute(
+      "[data-test=footer-company-info-email]",
+      "href"
     );
   }
   async getFacebookLinkFromSocialMediaSection(): Promise<string> {
