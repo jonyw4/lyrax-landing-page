@@ -10,7 +10,7 @@ export function BtnLanguage({ language }: BtnLanguageProps) {
   return (
     <button
       onClick={() => setLocale(language)}
-      data-test="button-change-i18-pt-BR"
+      data-test={`button-change-i18-${language}`}
       className={clsx("px-2", {
         "font-bold underline": isActive,
       })}
