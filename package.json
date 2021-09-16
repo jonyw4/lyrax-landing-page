@@ -14,13 +14,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "test:e2e": "jest tests/e2e"
+    "test:e2e": "jest tests/e2e",
+    "test:visual-regression": "jest tests/visual-regression"
   },
   "devDependencies": {
     "@playwright/test": "^1.14.1",
     "@types/jest": "^27.0.1",
+    "@types/jest-image-snapshot": "^4.3.1",
     "@types/react": "^17.0.19",
     "jest": "^27.1.0",
+    "jest-image-snapshot": "^4.5.1",
     "ts-jest": "^27.0.5",
     "typescript": "^4.4.2"
   }

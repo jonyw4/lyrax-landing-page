@@ -9,4 +9,5 @@ export interface HomePageDriver {
   getLocale(): Promise<string>;
   goToHomePage(): Promise<void>;
   changeLocaleTo(locale: string): Promise<void>;
+  screenshot(): Promise<Buffer>;
 }

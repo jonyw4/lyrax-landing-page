@@ -12,8 +12,10 @@ export class HomePagePlaywrightDriver
     await this.getPage().goto(LANDING_PAGE_URL);
   }
   async getCompanyNameFromHeader(): Promise<string> {
-    return await this.getPage()
-      .getAttribute("[data-test=company-info]", "title");
+    return await this.getPage().getAttribute(
+      "[data-test=company-info]",
+      "title"
+    );
   }
   async getCompanyIdFromFooter(): Promise<string> {
     return await this.getPage().textContent(
@@ -27,10 +29,10 @@ export class HomePagePlaywrightDriver
     );
   }
   async getFacebookLinkFromSocialMediaSection(): Promise<string> {
-     return await this.getPage().getAttribute(
-       "[data-test=footer-company-social-media-facebook]",
-       "href"
-     );
+    return await this.getPage().getAttribute(
+      "[data-test=footer-company-social-media-facebook]",
+      "href"
+    );
   }
   async getInstagramLinkFromSocialMediaSection(): Promise<string> {
     return await this.getPage().getAttribute(
@@ -51,12 +53,15 @@ export class HomePagePlaywrightDriver
     );
   }
   async getLocale(): Promise<string> {
-    return await this.getPage().getAttribute(
-      "html",
-      "lang"
-    );
+    return await this.getPage().getAttribute("html", "lang");
   }
   async changeLocaleTo(locale: string): Promise<void> {
     await this.getPage().click(`[data-test=button-change-i18-${locale}]`);
+  }
+  async screenshot(): Promise<Buffer> {
+    return await this.getPage().screenshot({
+      path: "./screenshot.png",
+      fullPage: true,
+    });
   }
 }
