@@ -1,7 +1,10 @@
-export function Logo(){
+import Image from "next/image";
+import logoSvg from "../../../public/images/logo.svg";
+
+export function Logo() {
   return (
-    <img
-      src="https://lyrax.com.br/img/logo.svg"
+    <Image
+      src={logoSvg}
       alt="Lyrax"
       title="Lyrax"
       data-test="company-info"
