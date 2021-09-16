@@ -29,11 +29,10 @@ describe('Visual Regression', () => {
           await homePageDriver.changeLocaleTo(locale);
           const image = await homePageDriver.screenshot();
           expect(image).toMatchImageSnapshot({
-            customSnapshotIdentifier: `home-page-snaphshot-${locale}-locale`,
+            customSnapshotIdentifier: `home-page-${locale}-locale`,
           });
         }
       );
     });
-    
   });
 });
