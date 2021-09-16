@@ -13,8 +13,8 @@ import { useRouter } from 'next/router';
 import { useTranslation } from 'react-i18next';
 import Head from 'next/head'
 
-export function HomePage({ language }) {
-  const { t } = useTranslation()
+export function HomePage() {
+  const { t, i18n: { language } } = useTranslation();
   const router = useRouter();
 
   const setLanguage = (locale) =>
