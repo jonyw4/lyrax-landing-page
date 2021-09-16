@@ -22,17 +22,15 @@ describe('Visual Regression', () => {
   const languages = ["pt-BR", "en"];
   
   describe('HomePage', () => {
-    describe('locale pt-BR', () => {
-      test.each(languages)(
-        "given %s locale it should renders correctly",
-        async (locale) => {
-          await homePageDriver.changeLocaleTo(locale);
-          const image = await homePageDriver.screenshot();
-          expect(image).toMatchImageSnapshot({
-            customSnapshotIdentifier: `home-page-${locale}-locale`,
-          });
-        }
-      );
-    });
+    test.each(languages)(
+      "given %s locale it should renders correctly",
+      async (locale) => {
+        await homePageDriver.changeLocaleTo(locale);
+        const image = await homePageDriver.screenshot();
+        expect(image).toMatchImageSnapshot({
+          customSnapshotIdentifier: `home-page-${locale}-locale`,
+        });
+      }
+    );
   });
 });
