@@ -18,7 +18,7 @@
     "test:visual-regression": "jest tests/visual-regression"
   },
   "devDependencies": {
-    "@playwright/test": "1.17.0",
+    "@playwright/test": "1.17.1",
     "@types/jest": "27.0.3",
     "@types/jest-image-snapshot": "4.3.1",
     "@types/react": "17.0.37",
