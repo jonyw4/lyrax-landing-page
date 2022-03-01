@@ -21,7 +21,7 @@
     "@playwright/test": "1.18.1",
     "@types/jest": "27.0.3",
     "@types/jest-image-snapshot": "4.3.1",
-    "@types/react": "17.0.38",
+    "@types/react": "17.0.39",
     "jest": "27.4.2",
     "jest-image-snapshot": "4.5.1",
     "ts-jest": "27.1.3",
